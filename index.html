@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TRUMACC SHOP</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:linear-gradient(135deg,#ffd1dc,#ffffff);
+  color:#111;
+}
+
+/* HEADER */
+header{
+  text-align:center;
+  padding:15px;
+  font-size:22px;
+  font-weight:bold;
+  background:linear-gradient(90deg,#ff69b4,#ffffff);
+}
+
+.fire{
+  background: linear-gradient(90deg,#ff0000,#ff7a00,#ffd000,#ff0000);
+  background-size:300% 300%;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation: fire 2s linear infinite;
+}
+
+@keyframes fire{
+  0%{background-position:0%}
+  100%{background-position:300%}
+}
+
+/* INTRO */
+.intro{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.85);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:99999;
+}
+
+.intro-box{
+  width:85%;
+  max-width:340px;
+  background:linear-gradient(135deg,#ff69b4,#ffffff);
+  padding:20px;
+  border-radius:18px;
+  text-align:center;
+}
+
+.intro-box button{
+  margin-top:10px;
+  padding:10px 15px;
+  border:none;
+  border-radius:12px;
+  background:#111;
+  color:white;
+  font-weight:bold;
+}
+
+/* NOTICE */
+.notice{
+  background:#111;
+  color:#ff69b4;
+  font-weight:bold;
+  padding:8px;
+  text-align:center;
+  font-size:13px;
+}
+
+/* RUN */
+.run{
+  background:#111;
+  color:#ff69b4;
+  padding:6px;
+  white-space:nowrap;
+  overflow:hidden;
+}
+
+.run span{
+  display:inline-block;
+  padding-left:100%;
+  animation:run 8s linear infinite;
+}
+
+@keyframes run{
+  0%{transform:translateX(0)}
+  100%{transform:translateX(-100%)}
+}
+
+/* SEARCH */
+.searchBox{
+  text-align:center;
+  margin:10px;
+}
+
+.searchBox input{
+  width:90%;
+  max-width:400px;
+  padding:10px;
+  border-radius:10px;
+  border:2px solid #ff69b4;
+}
+
+/* GRID */
+.container{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:12px;
+  padding:10px;
+}
+
+/* CARD */
+.card{
+  background:white;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 0 10px rgba(255,105,180,0.25);
+  position:relative;
+}
+
+.card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
+
+.tag{
+  position:absolute;
+  top:8px;
+  left:8px;
+  background:#ff69b4;
+  color:white;
+  font-size:11px;
+  padding:4px 8px;
+  border-radius:6px;
+}
+
+.info{
+  padding:10px;
+}
+
+.price{
+  color:#ff4da6;
+  font-weight:bold;
+}
+
+.note{
+  font-size:12px;
+  color:#666;
+}
+
+/* BUTTON */
+.btn{
+  display:flex;
+  gap:6px;
+  padding:10px;
+}
+
+.btn button{
+  flex:1;
+  border:none;
+  padding:10px;
+  border-radius:8px;
+}
+
+.detailBtn{background:#111;color:white;}
+.buyBtn{background:#ff69b4;color:white;}
+
+/* POPUP */
+.popup{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.8);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:999;
+}
+
+.box{
+  width:320px;
+  background:white;
+  border-radius:10px;
+  padding:15px;
+  text-align:center;
+}
+
+.box img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-radius:10px;
+}
+
+/* BUY */
+.buyPopup{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.85);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:1000;
+}
+
+.buyBox{
+  width:300px;
+  background:white;
+  border-radius:12px;
+  padding:15px;
+}
+
+.buyBox button{
+  width:100%;
+  margin:5px 0;
+  padding:10px;
+  border:none;
+  border-radius:8px;
+  font-weight:bold;
+}
+
+.fb{background:#1877f2;color:white;}
+.zl{background:#00c300;color:white;}
+
+/* PAGE */
+.page{
+  text-align:center;
+  margin:15px;
+}
+
+.page button{
+  padding:8px 12px;
+  border:none;
+  border-radius:8px;
+  background:#ff69b4;
+  color:white;
+  font-weight:bold;
+}
+
+/* FOOTER */
+.footer-note{
+  margin:20px;
+  padding:18px;
+  text-align:center;
+  background:linear-gradient(135deg,#ff69b4,#ffffff);
+  border-radius:15px;
+  font-weight:bold;
+  color:#111;
+  box-shadow:0 0 15px rgba(255,105,180,0.4);
+  line-height:1.5;
+  font-size:13px;
+}
+
+/* SNOW */
+.snow{
+  position:fixed;
+  top:-10px;
+  color:white;
+  animation:fall linear infinite;
+  pointer-events:none;
+}
+
+@keyframes fall{
+  to{transform:translateY(100vh)}
+}
+</style>
+</head>
+
+<body>
+
+<!-- INTRO -->
+<div class="intro" id="intro">
+  <div class="intro-box">
+    <h1>🔥 TRUMACC SHOP 🔥</h1>
+    <p>💗 Uy tín 100%</p>
+    <p>🛡 Admin có cọc</p>
+    <p>⚡ Giá rẻ - Giao dịch nhanh</p>
+    <button onclick="closeIntro()">🚀 VÀO SHOP</button>
+  </div>
+</div>
+
+<header>
+  <div class="fire">🔥 TRUMACC SHOP 🔥</div>
+</header>
+
+<div class="run">
+  <span>💗 SHOP ACC ROBLOX - UY TÍN - GIÁ RẺ - ADMIN CÓ CỌC 💗</span>
+</div>
+
+<div class="notice">
+🔥 SHOP UY TÍN 100% - KHÔNG SCAM - GIAO DỊCH NHANH 🔥
+</div>
+
+<div class="searchBox">
+  <input id="search" onkeyup="render()" placeholder="🔎 Tìm acc...">
+</div>
+
+<div class="container" id="list"></div>
+
+<div class="page">
+  <button onclick="prevPage()">⬅</button>
+  <span id="pageNum"></span>
+  <button onclick="nextPage()">➡</button>
+</div>
+
+<!-- DETAIL -->
+<div class="popup" id="popup" onclick="this.style.display='none'">
+  <div class="box" onclick="event.stopPropagation()">
+    <img id="pimg">
+    <h3 id="title"></h3>
+    <p id="price"></p>
+    <p id="code"></p>
+    <p id="note"></p>
+  </div>
+</div>
+
+<!-- BUY -->
+<div class="buyPopup" id="buyPopup" onclick="this.style.display='none'">
+  <div class="buyBox" onclick="event.stopPropagation()">
+    <h3>💬 Liên hệ mua acc</h3>
+
+    <button class="fb" onclick="window.open('https://www.facebook.com/share/17sCFrf2ZF/')">
+      Facebook
+    </button>
+
+    <button class="zl" onclick="window.open('https://zaloapp.com/qr/p/qvoo9gxy0f8o?src=qr')">
+      Zalo
+    </button>
+  </div>
+</div>
+
+<div class="footer-note">
+💗 SHOP ACC ROBLOX UY TÍN 100% 💗<br>
+⚡ Admin có cọc - không scam - giao dịch nhanh ⚡<br>
+🔥 Acc đúng mô tả - giá tốt nhất thị trường 🔥<br>
+📞 Zalo: 0984337170 | Facebook hỗ trợ 24/7<br>
+💎 Mua sớm giá tốt - số lượng có hạn 💎
+</div>
+
+<script>
+
+function closeIntro(){
+  document.getElementById("intro").style.display="none";
+}
+
+let page=1;
+let perPage=2;
+
+const data = [
+  {code:"MS01", title:"VIP ACC", price:"200.000đ", note:"Max level + full skill", img:"https://i.imgur.com/1.jpg"},
+  {code:"MS02", title:"Fruit God", price:"350.000đ", note:"Có fruit xịn", img:"https://i.imgur.com/2.jpg"},
+  {code:"MS03", title:"Max Level", price:"500.000đ", note:"Farm sẵn 100%", img:"https://i.imgur.com/3.jpg"},
+  {code:"MS04", title:"Rare Acc", price:"250.000đ", note:"Acc hiếm", img:"https://i.imgur.com/4.jpg"},
+  {code:"MS05", title:"Pro PvP", price:"600.000đ", note:"PvP mạnh", img:"https://i.imgur.com/5.jpg"}
+];
+
+function render(){
+  let v=document.getElementById("search").value.toLowerCase();
+  let list=document.getElementById("list");
+  list.innerHTML="";
+
+  let f=data.filter(x =>
+    x.title.toLowerCase().includes(v) ||
+    x.code.toLowerCase().includes(v)
+  );
+
+  let start=(page-1)*perPage;
+  let end=start+perPage;
+
+  f.slice(start,end).forEach(x=>{
+    list.innerHTML+=`
+      <div class="card">
+        <div class="tag">${x.code}</div>
+        <img src="${x.img}">
+        <div class="info">
+          <b>${x.title}</b><br>
+          <div class="price">${x.price}</div>
+          <div class="note">${x.note}</div>
+        </div>
+        <div class="btn">
+          <button class="detailBtn" onclick="openDetail('${x.title}','${x.price}','${x.code}','${x.note}','${x.img}')">Chi tiết</button>
+          <button class="buyBtn" onclick="openBuy()">Mua</button>
+        </div>
+      </div>
+    `;
+  });
+
+  document.getElementById("pageNum").innerText=page;
+}
+
+function nextPage(){page++;render();}
+function prevPage(){if(page>1){page--;render();}}
+
+function openDetail(t,p,c,n,i){
+  popup.style.display="flex";
+  document.getElementById("pimg").src=i;
+  document.getElementById("title").innerText=t;
+  document.getElementById("price").innerText=p;
+  document.getElementById("code").innerText=c;
+  document.getElementById("note").innerText=n;
+}
+
+function openBuy(){
+  document.getElementById("buyPopup").style.display="flex";
+}
+
+/* SNOW */
+setInterval(()=>{
+  let s=document.createElement("div");
+  s.className="snow";
+  s.innerHTML="❄";
+  s.style.left=Math.random()*100+"vw";
+  s.style.animationDuration=(Math.random()*5+5)+"s";
+  document.body.appendChild(s);
+  setTimeout(()=>s.remove(),10000);
+},200);
+
+render();
+
+</script>
+
+</body>
+  </html>
